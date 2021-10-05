@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestIpConfig" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-09-24T12:03:38" hostname="DESKTOP-V66KIA8" time="0.399">
+<testsuite name="TestIpConfig" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-05T12:06:20" hostname="DESKTOP-V66KIA8" time="3.649">
   <properties/>
-  <testcase name="testPuertaEnlace()" classname="TestIpConfig" time="0.145"/>
-  <testcase name="testIp4()" classname="TestIpConfig" time="0.132"/>
-  <testcase name="testSubred()" classname="TestIpConfig" time="0.12"/>
+  <testcase name="testPuertaEnlace()" classname="TestIpConfig" time="0.181"/>
+  <testcase name="testIp4()" classname="TestIpConfig" time="0.127"/>
+  <testcase name="testPing()" classname="TestIpConfig" time="3.187"/>
+  <testcase name="testSubred()" classname="TestIpConfig" time="0.15"/>
   <system-out><![CDATA[   Puerta de enlace predeterminada . . . . . : 
    Direcci¢n IPv4. . . . . . . . . . . . . . : 172.22.160.1
    M scara de subred . . . . . . . . . . . . : 255.255.240.0
-La nota de de Tena Bellmont es un 10.0
+La nota de es un 10.0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

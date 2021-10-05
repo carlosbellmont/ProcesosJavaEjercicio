@@ -44,10 +44,14 @@ public class Main {
     }
 
     private static ArrayList<String> launchIpConfig()  {
+        return launchCommand("ipconfig");
+    }
+
+    private static ArrayList<String> launchCommand(String comando)  {
         ArrayList<String> out = new ArrayList<>();
         try {
             ProcessBuilder builder = new ProcessBuilder(
-                    "cmd.exe", "/c", "ipconfig");
+                    "cmd.exe", "/c", comando);
             builder.redirectErrorStream(true);
             Process p = builder.start();
             BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -60,5 +64,10 @@ public class Main {
             e.printStackTrace();
         }
         return out;
+    }
+
+    public static String hacerPing(String ip)  {
+        ArrayList<String> list = launchCommand("ping " + ip);
+        return list.get(0) + "\n" + list.get(1);
     }
 }

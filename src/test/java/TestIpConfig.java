@@ -18,6 +18,8 @@ public class TestIpConfig {
 
     @BeforeAll
     private static void launchIpConfig()  {
+        nota = 0.0;
+
         ArrayList<String> out = new ArrayList<>();
         try {
             ProcessBuilder builder = new ProcessBuilder(
@@ -39,25 +41,31 @@ public class TestIpConfig {
 
     @Test
     public void testIp4(){
-        Assertions.assertEquals(Main.getIp4(), ip4);
-        nota += 1/3.0;
+        Assertions.assertEquals(Main.getIp4().trim(), ip4.trim());
+        nota += 1/4.0;
     }
 
     @Test
     public void testPuertaEnlace(){
-        Assertions.assertEquals(Main.getPuertaEnlace(), puertaEnlace);
-        nota += 1/3.0;
+        Assertions.assertEquals(Main.getPuertaEnlace().trim(), puertaEnlace.trim());
+        nota += 1/4.0;
     }
 
     @Test
     public void testSubred(){
-        Assertions.assertEquals(Main.getSubred(), subred);
-        nota += 1/3.0;
+        Assertions.assertEquals(Main.getSubred().trim(), subred.trim());
+        nota += 1/4.0;
+    }
+
+    @Test
+    public void testPing(){
+        String ip = "8.8.8.8";
+        Assertions.assertTrue(Main.hacerPing(ip).startsWith("\nHaciendo ping a " + ip));
+        nota += 1/4.0;
     }
 
     @AfterAll
     public static void onFinished() {
-        System.out.println("La nota de " + Main.apellidos + " es un " + nota * 10);
-        nota = 0.0;
+        System.out.println("La nota de es un " + nota * 10);
     }
 }
